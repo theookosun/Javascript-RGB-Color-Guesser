@@ -25,29 +25,30 @@ easybtn.addEventListener("click", function(){
         else{
             squares[i].style.display = "none";
         }
-    }
-    
-    heading.style.backgroundColor = "#232323";
+    }    
+    heading.style.backgroundColor = "#steelblue";
 });
 
 hardbtn.addEventListener("click", function(){
     easybtn.classList.remove("selected");
     hardbtn.classList.add("selected");
-    var numSquares = 6;
-    var colors = generateRandomColors(numSquares);
+    numSquares = 6;
+    colors = generateRandomColors(numSquares);
     pickedColor =  pickcolors();
     //change colors of squares
     colorDisplay.textContent = pickedColor;
     for (var i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = colors[i];
+        squares[i].style.display = "block";
     }
-    heading.style.backgroundColor = "#232323";
+    heading.style.backgroundColor = "steelblue";
     
 });
 
 reseButt.addEventListener("click", function(){
     //generate new colors
-
+    message.textContent = "";
+    reseButt.textContent = "New Colors"
     colors = generateRandomColors(numSquares);
     pickedColor =  pickcolors();
     //change colors of squares
@@ -56,7 +57,8 @@ reseButt.addEventListener("click", function(){
     for (var i = 0; i < squares.length; i++){
         squares[i].style.backgroundColor = colors[i];
     }
-    heading.style.backgroundColor = "#232323";
+
+    heading.style.backgroundColor = "steel blue";
 
 
 });
@@ -71,7 +73,7 @@ for (var i = 0; i < squares.length; i++){
         if(this.style.backgroundColor === pickedColor) {
             message.textContent = "Correct"
             reseButt.textContent = "PLAY AGAIN?"
-            heading.style.backgroundColor = pickedColor;
+            heading.style.backgroundColor = "steelblue";
             ChangeColors(pickedColor);
         } 
         else{
